@@ -5,7 +5,7 @@
     </ion-item>
 
     <ion-item no-lines no-border center text-center>
-        <button ion-button color="secondary" id="button-submit" round (click)="goTo()">START</button>
+        <button ion-button color="secondary" id="button-submit" round (click)="goTo()" [disabled]="password===''">START</button>
     </ion-item>
   </div>
 </ion-content>

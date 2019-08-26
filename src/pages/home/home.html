@@ -3,7 +3,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="getstart">
+<ion-content no-bounce padding transparent class="getstart" style="background-color: transparent">
   <!-- <ion-icon class="icon-up" name="md-navigate"></ion-icon> -->
   <img class="icon-up" src="../../assets/images/levelButton/up.png" width="17px" *ngIf="isUp">
   <img class="icon-up" src="../../assets/images/levelButton/down.png" width="17px" *ngIf="isDown">
@@ -16,7 +16,7 @@
             <!-- <ion-label fixed>
               <ion-icon class="icon-up" name="md-navigate"></ion-icon>
             </ion-label> -->
-            <ion-input type="text" value="" [(ngModel)]="' ' + initLevel" readonly></ion-input>
+            <ion-input type="text" value="" [(ngModel)]="initLevel" readonly></ion-input>
           </ion-item>
         </ion-list>
       </ion-col>
