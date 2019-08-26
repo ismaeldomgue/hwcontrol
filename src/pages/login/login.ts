@@ -1,25 +1,35 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AlertController } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  password: string = '';
+
+  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
+  goTo() {
+    if (this.password === 'octoups') {
+      this.navCtrl.setRoot(HomePage);
+    } else {
+      this.showAlert();
+      this.password = '';
+    }
+  }
+
+  showAlert() {
+    const alert = this.alertCtrl.create({
+      title: 'ERROR!',
+      subTitle: 'Password is not correct.',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 }
