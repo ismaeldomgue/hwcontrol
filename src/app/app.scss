@@ -23,3 +23,7 @@
 input {
     font-family: digital-7;
 }
+
+ion-content > div.scroll-content {
+    overflow: hidden;
+}
