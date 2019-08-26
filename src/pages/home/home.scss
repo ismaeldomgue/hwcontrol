@@ -1,3 +1,82 @@
 page-home {
+    #navbar-image {
+        padding-top: 111px;
+        background-image: url('../../assets/images/header.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+      }
 
+    .getstart {
+        // background-color: transparent;
+        background-image: url('../../assets/images/board1.png');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+
+    .level-number-time {
+        margin-top: 30px;
+    }
+    .button-number-level {
+        margin-top: 50px;
+    }
+    .icon-up{
+        position:absolute;
+        margin-top:54px;
+        margin-left:72px;
+        z-index:2000;
+        color: #ff0000;
+    
+    }
+
+    .item .item-input {
+        background-color: black;
+    }
+
+    ion-input {
+        color: #ff0000;
+        font-weight: bold;
+        font-size: 33px;
+    }
+
+
+
+    // code remove primary color line on Input
+
+    .item-md.item-input.input-has-focus .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.input-has-focus:last-child {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.input-has-focus:last-child .item-inner {
+        box-shadow: none;
+      }
+      
+      .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child .item-inner {
+        box-shadow: none;
+      }
+      
+      .item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus) .item-inner {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
+      
+      .list-md .item-input.ng-invalid.ng-touched:not(.input-has-focus):last-child {
+        border-bottom-color: transparent !important;
+        box-shadow: none !important;
+      }
 }

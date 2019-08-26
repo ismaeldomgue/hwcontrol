@@ -1,14 +1,94 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+<ion-header no-border>
+  <ion-navbar transparent id="navbar-image">
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding transparent class="getstart" style="background-color: transparent">
+  <!-- <ion-icon class="icon-up" name="md-navigate"></ion-icon> -->
+  <img class="icon-up" src="../../assets/images/levelButton/up.png" width="17px" *ngIf="isUp">
+  <img class="icon-up" src="../../assets/images/levelButton/down.png" width="17px" *ngIf="isDown">
+
+  <ion-grid>
+    <ion-row class="level-number-time">
+      <ion-col col-3 offset-2>
+        <ion-list no-border no-lines>
+          <ion-item color="dark">
+            <!-- <ion-label fixed>
+              <ion-icon class="icon-up" name="md-navigate"></ion-icon>
+            </ion-label> -->
+            <ion-input type="text" value="" [(ngModel)]="' ' + initLevel" readonly></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-5>
+        <ion-list no-border no-lines>
+          <ion-item color="dark">
+            <ion-input type="text" value="" [(ngModel)]="timePast" readonly></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <div class="button-number-level">
+      <ion-row>
+        <ion-col col-3 offset-3>
+          <img src="../../assets/images/levelButton/level.png" *ngIf="initLevel===3">
+        </ion-col>
+        <ion-col col-2 offset-1>
+          <img src="../../assets/images/levelButton/3green.png" *ngIf="level===3">
+          <img src="../../assets/images/levelButton/3red.png" *ngIf="destinationLevel===3">
+          <img src="../../assets/images/levelButton/3default.png" (click)="goTo(3)"
+            *ngIf="destinationLevel!==3 && level!==3">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3 offset-3>
+          <img src="../../assets/images/levelButton/level.png" *ngIf="initLevel===2">
+        </ion-col>
+        <ion-col col-2 offset-1>
+          <img src="../../assets/images/levelButton/2green.png" *ngIf="level===2">
+          <img src="../../assets/images/levelButton/2red.png" *ngIf="destinationLevel===2">
+          <img src="../../assets/images/levelButton/2default.png" (click)="goTo(2)"
+            *ngIf="destinationLevel!==2 && level!==2">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3 offset-3>
+          <img src="../../assets/images/levelButton/level.png" *ngIf="initLevel===1">
+        </ion-col>
+        <ion-col col-2 offset-1>
+          <img src="../../assets/images/levelButton/1green.png" *ngIf="level===1">
+          <img src="../../assets/images/levelButton/1red.png" *ngIf="destinationLevel===1">
+          <img src="../../assets/images/levelButton/1default.png" (click)="goTo(1)"
+            *ngIf="destinationLevel!==1 && level!==1">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3 offset-3>
+          <img src="../../assets/images/levelButton/level.png" *ngIf="initLevel===0">
+        </ion-col>
+        <ion-col col-2 offset-1>
+          <img src="../../assets/images/levelButton/0green.png" *ngIf="level===0">
+          <img src="../../assets/images/levelButton/0red.png" *ngIf="destinationLevel===0">
+          <img src="../../assets/images/levelButton/0default.png" (click)="goTo(0)"
+            *ngIf="destinationLevel!==0 && level!==0">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3 offset-3>
+          <img src="../../assets/images/levelButton/level.png" *ngIf="initLevel===-1">
+        </ion-col>
+        <ion-col col-2 offset-1>
+          <img src="../../assets/images/levelButton/moinUngreen.png" *ngIf="level===-1">
+          <img src="../../assets/images/levelButton/moinUnred.png" *ngIf="destinationLevel===-1">
+          <img src="../../assets/images/levelButton/moinUndefault.png" (click)="goTo(-1)"
+            *ngIf="destinationLevel!==-1 && level!==-1">
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
 </ion-content>
+
+<ion-footer>
+  <span style="background-color: #19ea00; color: #19ea00; display: block">.</span>
+  <span style="background-color: #19ea00; color: #19ea00; display: block">.</span>
+</ion-footer>
